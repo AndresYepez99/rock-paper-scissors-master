@@ -1,15 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- CSS -->
-  <link rel="stylesheet" href="css/main.css">
-  <title>Rock, Paper, Scissors game</title>
-</head>
-<body>
-  
-  <!-- JavaScript -->
-  <script src="js/app.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/main.css" />
+    <title>Rock, Paper, Scissors game</title>
+  </head>
+  <body>
+    <div class="app-container">
+
+      <!-- Header container-->
+      <header class="header-container">
+        <img
+          src="images/logo.svg"
+          alt="Rock, Paper, Scissors logo"
+          class="logo"
+        />
+
+        <!-- Points counters -->
+        <div class="points-counters-container">
+          <span class="title">score</span>
+          <span class="points">12</span>
+        </div>
+      </header>
+
+      <!-- Game buttons container-->
+      <div class="game-buttons-container">
+        <!-- <img src="images/bg-triangle.svg" alt="bg-triangle" class="img-triangle" /> -->
+
+        <!-- game-buttons -->
+        <div class="buttons">
+          <button class="btn-play rock">
+            <!-- <img src="images/icon-rock.svg" alt="Rock"> -->
+          </button>
+          <button class="btn-play paper">
+            <!-- <img src="images/icon-paper.svg" alt="Paper"> -->
+          </button>
+          <button class="btn-play scissors">
+            <!-- <img src="images/icon-scissors.svg" alt="Scissors"> -->
+          </button>
+        </div>
+      </div>
+
+      <!-- Button rules container-->
+      <div class="btn-rules-conatiner">
+        <button class="btn-rules">rules</button>
+      </div>
+
+      <!-- Modal rules -->
+      <div class="modal-rules-container" hidden>
+        <div class="modal-rules">
+          <h2>rules</h2>
+          <img
+            src="images/icon-close.svg"
+            alt="icon-close"
+            class="icon-close"
+          />
+
+          <img
+            src="images/image-rules.svg"
+            alt="image-rules"
+            class="image-rules"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/app.js"></script>
+  </body>
 </html>

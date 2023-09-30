@@ -1,0 +1,77 @@
+@use '../variables';
+
+.btn-play {
+  height: 180px;
+  width: 180px;
+  border: 20px solid;
+  border-radius: 50%;
+  background-color: variables.$whiteBackground;
+  box-shadow: inset 0px 8px 5px 0px hsla(0, 0%, 0%, 0.218);
+}
+
+.btn-play::after {
+  position: relative;
+  top: -20px;
+  left: -20px;
+  display: block;
+  content: '';
+  height: 180px;
+  width: 180px;
+  border: none;
+  border-radius: 50%;
+  box-shadow: inset 0px -8px 5px 0px hsla(0, 0%, 0%, 0.306);
+}
+
+@mixin btn-play-border-color(
+  $btnColor: variables.$rockColor,
+  $x: -90px,
+  $y: -90px
+) {
+  position: relative;
+  top: $y;
+  left: $x;
+  border-color: $btnColor;
+}
+
+.rock {
+  @include btn-play-border-color(
+    $btnColor: variables.$rockColor,
+    $x: 240px,
+    $y: 100px
+  );
+}
+
+.paper {
+  @include btn-play-border-color(
+    $btnColor: variables.$paperColor,
+    $x: -96px,
+    $y: -110px
+  );
+}
+
+.scissors {
+  @include btn-play-border-color(
+    $btnColor: variables.$scissorsColor,
+    $x: 13px,
+    $y: -110px
+  );
+}
+
+@mixin btn-play-icon($urlImg: url(../../images/icon-rock.svg)) {
+  background: $urlImg;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 35%;
+}
+
+.rock::after {
+  @include btn-play-icon($urlImg: url(../../images/icon-rock.svg));
+}
+
+.paper::after {
+  @include btn-play-icon($urlImg: url(../../images/icon-paper.svg));
+}
+
+.scissors::after {
+  @include btn-play-icon($urlImg: url(../../images/icon-scissors.svg));
+}

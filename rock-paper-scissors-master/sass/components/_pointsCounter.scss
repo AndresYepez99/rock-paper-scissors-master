@@ -1,0 +1,28 @@
+@use '../variables';
+
+.points-counters-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    height: 120px;
+    width: 150px;
+    border: none;
+    border-radius: 8px;
+    background-color: variables.$whiteBackground;
+}
+
+.title {
+    font-size: 18px;
+    font-weight: variables.$font-weight-semibold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: variables.$scoreText;
+}
+
+.points {
+    font-size: 65px;
+    font-weight: variables.$font-weight-semibold;
+    color: variables.$darkText;
+}

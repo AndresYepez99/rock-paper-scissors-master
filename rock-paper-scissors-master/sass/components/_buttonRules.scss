@@ -1,0 +1,16 @@
+@use '../variables';
+
+.btn-rules {
+    padding: 10px 30px;
+    border: 1px solid variables.$whiteBackground;
+    border-radius: 8px;
+    
+    background: none;
+    color: variables.$whiteBackground;
+    
+    font-weight: variables.$font-weight-semibold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    cursor: pointer;
+}
