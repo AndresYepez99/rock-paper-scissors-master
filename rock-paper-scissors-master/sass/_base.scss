@@ -1,8 +1,11 @@
 @use 'variables';
 
 body {
+  display: grid;
+  justify-items: center;
   width: 100vw;
   height: 100vh;
   font-family: variables.$font-family-Barlow;
   background: variables.$radialGradient;
+  overflow: hidden;
 }

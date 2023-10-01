@@ -7,6 +7,7 @@
   border-radius: 50%;
   background-color: variables.$whiteBackground;
   box-shadow: inset 0px 8px 5px 0px hsla(0, 0%, 0%, 0.218);
+  transition: 0.2s;
 }
 
 .btn-play::after {
@@ -20,6 +21,11 @@
   border: none;
   border-radius: 50%;
   box-shadow: inset 0px -8px 5px 0px hsla(0, 0%, 0%, 0.306);
+  cursor: pointer;
+}
+
+.btn-play:hover {
+  transform: scale(0.95);
 }
 
 @mixin btn-play-border-color(
@@ -37,7 +43,7 @@
   @include btn-play-border-color(
     $btnColor: variables.$rockColor,
     $x: 240px,
-    $y: 100px
+    $y: 120px
   );
 }
 

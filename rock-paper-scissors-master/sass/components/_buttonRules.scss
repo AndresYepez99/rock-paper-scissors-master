@@ -11,6 +11,10 @@
     font-weight: variables.$font-weight-semibold;
     text-transform: uppercase;
     letter-spacing: 2px;
-
+    transition: 0.2s;
     cursor: pointer;
+}
+
+.btn-rules:hover {
+    box-shadow: inset 0px 0px 0px 1px variables.$whiteBackground;
 }
