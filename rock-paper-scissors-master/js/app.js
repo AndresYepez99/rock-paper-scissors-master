@@ -1,11 +1,11 @@
 'use strict';
 /* DOM elements */
 import {
-  $blockButtons,
-  $blockModalRulesContainer,
-  $btnCloseModalRules,
-  $btnRules,
-  $pointCounter,
+  $containerButtons,
+  $containerModalRules,
+  $elBtnCloseModalRules,
+  $elBtnRules,
+  $elPointCounter
 } from './elements.js';
 
 /* Global variables */
@@ -14,18 +14,21 @@ let points = 0;
 /* Functions */
 /* Generate machine option */
 const machinePlays = function () {
-  let option = Math.trunc(Math.random() * 3 + 1);
-  switch (option) {
-    case 1:
-      option = 'rock';
-      break;
-    case 2:
-      option = 'paper';
-    case 3:
-      option = 'scissors';
-      break;
-  }
+  const options = ['rock', 'paper', 'scissors'];
+  const randomIndex = Math.floor(Math.random() * options.length);
+  const option = options[randomIndex];
   return option;
+};
+
+/* Checks if optionPlayer is equal to the option that beats optionMachine */
+const isPlayerWinner = function (optionPlayer, optionMachine) {
+  const winConditions = {
+    rock: 'scissors',
+    paper: 'rock',
+    scissors: 'paper',
+  };
+
+  return winConditions[optionPlayer] === optionMachine;
 };
 
 /* play a round */
@@ -33,38 +36,35 @@ const playRun = function (optionPlayer, optionMachine) {
   /* console.log(optionPlayer, optionMachine); */
 
   if (optionPlayer === optionMachine) {
-    console.log(`it's a mess`);
-  } else if (
-    (optionPlayer === 'rock' && optionMachine === 'scissors') ||
-    (optionPlayer === 'paper' && optionMachine === 'rock') ||
-    (optionPlayer === 'scissors' && optionMachine === 'paper')
-  ) {
-    console.log(`you win!`);
+    console.log(`It's a tie.`);
+  } else if (isPlayerWinner(optionPlayer, optionMachine)) {
+    console.log(`You win!`);
     points++;
   } else {
-    console.log(`you lose!`);
+    console.log(`You lose!`);
   }
 };
 
 /* Event Listeners */
 
 /* Game buttons events */
-$blockButtons.addEventListener('click', function (event) {
+$containerButtons.addEventListener('click', function (event) {
   /* capture player option */
-  const optionPlayer = event.target.classList[1];
-  playRun(optionPlayer, machinePlays());
-  
+  const optionPlayer = event.target.classList[1]; // rock || paper || scissors
+  const machineOption = machinePlays();
+
+  playRun(optionPlayer, machineOption);
   /* update player points */
-  $pointCounter.textContent = points;
+  $elPointCounter.textContent = points;
 });
 
 /* Modal rules events */
 /* Open */
-$btnRules.addEventListener('click', function () {
-  $blockModalRulesContainer.style.display = 'grid';
+$elBtnRules.addEventListener('click', function () {
+  $containerModalRules.style.display = 'grid';
 });
 
 /* Close */
-$btnCloseModalRules.addEventListener('click', function () {
-  $blockModalRulesContainer.style.display = 'none';
+$elBtnCloseModalRules.addEventListener('click', function () {
+  $containerModalRules.style.display = 'none';
 });

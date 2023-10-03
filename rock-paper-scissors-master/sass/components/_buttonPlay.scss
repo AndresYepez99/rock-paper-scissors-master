@@ -28,10 +28,11 @@
   transform: scale(0.95);
 }
 
-@mixin btn-play-border-color(
+/* Mixin to define border color and button position */
+@mixin btn-play-border-color-and-position(
   $btnColor: variables.$rockColor,
-  $x: -90px,
-  $y: -90px
+  $x: 0,
+  $y: 0
 ) {
   position: relative;
   top: $y;
@@ -40,29 +41,31 @@
 }
 
 .rock {
-  @include btn-play-border-color(
+  @include btn-play-border-color-and-position(
     $btnColor: variables.$rockColor,
-    $x: 240px,
-    $y: 120px
+    $x: -57px,
+    $y: -75px
   );
 }
 
 .paper {
-  @include btn-play-border-color(
+  @include btn-play-border-color-and-position(
     $btnColor: variables.$paperColor,
-    $x: -96px,
-    $y: -110px
+    $x: 200px,
+    $y: -282px
   );
 }
 
 .scissors {
-  @include btn-play-border-color(
+  @include btn-play-border-color-and-position(
     $btnColor: variables.$scissorsColor,
-    $x: 13px,
-    $y: -110px
+    $x: 70px,
+    $y: -280px
   );
 }
 
+
+/* Mixin to embed icon in button */
 @mixin btn-play-icon($urlImg: url(../../images/icon-rock.svg)) {
   background: $urlImg;
   background-repeat: no-repeat;
