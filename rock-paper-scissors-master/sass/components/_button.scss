@@ -1,6 +1,6 @@
 @use '../variables';
 
-.btn-rules {
+.btn {
     padding: 10px 30px;
     border: 1px solid variables.$whiteBackground;
     border-radius: 8px;
@@ -15,6 +15,6 @@
     cursor: pointer;
 }
 
-.btn-rules:hover {
+.btn:hover {
     box-shadow: inset 0px 0px 0px 1px variables.$whiteBackground;
 }

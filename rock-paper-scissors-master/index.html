@@ -29,24 +29,26 @@
         <!-- <div class="img-triangle">
           <img src="images/bg-triangle.svg" alt="bg-triangle" id="img-triangle" />
         </div> -->
-        
+
         <!-- game-buttons -->
         <div class="buttons">
-          <button class="btn-play rock">
-            <!-- <img src="images/icon-rock.svg" alt="Rock"> -->
-          </button>
-          <button class="btn-play paper">
-            <!-- <img src="images/icon-paper.svg" alt="Paper"> -->
-          </button>
-          <button class="btn-play scissors">
-            <!-- <img src="images/icon-scissors.svg" alt="Scissors"> -->
-          </button>
+          <p class="txt-option-1 hidden">you picked</p>
+          <p class="txt-option-2 hidden">the house picked</p>
+
+          <div class="play-again-container hidden">
+            <p class="txt-result">you win</p>
+            <button class="btn btn-play-again">play again</button>
+          </div>
+
+          <button class="btn-play rock"></button>
+          <button class="btn-play paper"></button>
+          <button class="btn-play scissors"></button>
         </div>
       </div>
 
       <!-- Button rules container-->
       <div class="btn-rules-conatiner">
-        <button class="btn-rules">rules</button>
+        <button class="btn btn-rules">rules</button>
       </div>
 
       <!-- Modal rules -->
@@ -72,6 +74,5 @@
     <!-- JavaScript -->
     <!-- <script src="js/app.js"></script> -->
     <script type="module" src="js/app.js"></script>
-    
   </body>
 </html>

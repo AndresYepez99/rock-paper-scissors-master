@@ -1,12 +1,13 @@
 @use '../variables';
 
 .btn-play {
+  position: relative;
   height: 180px;
   width: 180px;
   border: 20px solid;
   border-radius: 50%;
   background-color: variables.$whiteBackground;
-  box-shadow: inset 0px 8px 5px 0px hsla(0, 0%, 0%, 0.218);
+  box-shadow: inset 0px 8px 3px 1px hsla(0, 0%, 0%, 0.229);
   transition: 0.2s;
 }
 
@@ -20,7 +21,7 @@
   width: 180px;
   border: none;
   border-radius: 50%;
-  box-shadow: inset 0px -8px 5px 0px hsla(0, 0%, 0%, 0.306);
+  box-shadow: inset 0px -8px 5px 1px hsla(0, 0%, 0%, 0.506);
   cursor: pointer;
 }
 
@@ -34,7 +35,6 @@
   $x: 0,
   $y: 0
 ) {
-  position: relative;
   top: $y;
   left: $x;
   border-color: $btnColor;
@@ -64,7 +64,6 @@
   );
 }
 
-
 /* Mixin to embed icon in button */
 @mixin btn-play-icon($urlImg: url(../../images/icon-rock.svg)) {
   background: $urlImg;
@@ -83,4 +82,15 @@
 
 .scissors::after {
   @include btn-play-icon($urlImg: url(../../images/icon-scissors.svg));
+}
+
+.button-play-hidden {
+  display: none;
+}
+
+.button-play-temp-style {
+  position: static;
+  transform: scale(1.5);
+  user-select: none;
+  z-index: -500;
 }
