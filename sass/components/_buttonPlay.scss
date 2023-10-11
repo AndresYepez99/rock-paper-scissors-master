@@ -65,7 +65,7 @@
 }
 
 /* Mixin to embed icon in button */
-@mixin btn-play-icon($urlImg: url(../../images/icon-rock.svg)) {
+@mixin btn-play-icon($urlImg: url(../images/icon-rock.svg)) {
   background: $urlImg;
   background-repeat: no-repeat;
   background-position: center;
@@ -73,15 +73,15 @@
 }
 
 .rock::after {
-  @include btn-play-icon($urlImg: url(../../images/icon-rock.svg));
+  @include btn-play-icon($urlImg: url(../images/icon-rock.svg));
 }
 
 .paper::after {
-  @include btn-play-icon($urlImg: url(../../images/icon-paper.svg));
+  @include btn-play-icon($urlImg: url(../images/icon-paper.svg));
 }
 
 .scissors::after {
-  @include btn-play-icon($urlImg: url(../../images/icon-scissors.svg));
+  @include btn-play-icon($urlImg: url(../images/icon-scissors.svg));
 }
 
 .button-play-hidden {

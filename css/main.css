@@ -111,21 +111,21 @@ body {
 
 /* Mixin to embed icon in button */
 .rock::after {
-  background: url(../../images/icon-rock.svg);
+  background: url(../images/icon-rock.svg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: 35%;
 }
 
 .paper::after {
-  background: url(../../images/icon-paper.svg);
+  background: url(../images/icon-paper.svg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: 35%;
 }
 
 .scissors::after {
-  background: url(../../images/icon-scissors.svg);
+  background: url(../images/icon-scissors.svg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: 35%;
@@ -188,7 +188,7 @@ body {
 .image-rules {
   width: 100%;
   height: 100%;
-  background-image: url(../../images/image-rules.svg);
+  background-image: url(../images/image-rules.svg);
   background-repeat: no-repeat;
   background-position: center;
   grid-area: 2/1/3/3;
